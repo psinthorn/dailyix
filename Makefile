@@ -13,4 +13,10 @@ migratedown:
 sqlc:
 	sqlc generate
 
+build:
+	docker build -o main main.go
+
+start:
+	docker run --name dailyx -p 9090:9090 dailyx:latest
+
 .PHONY: postgres createdb dropdb migrateup migratedown sqlc
